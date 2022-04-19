@@ -38,7 +38,7 @@ resource "azurerm_sql_active_directory_administrator" "this" {
 }
 
 resource "azurerm_storage_account" "this" {
-  name                     = "databrickssignaturesa"
+  name                     = "dbprodsignaturesa"
   resource_group_name      = var.azure_sql_resource_group_name
   location                 = azurerm_resource_group.azure_sql.location
   account_tier             = "Standard"
@@ -55,11 +55,11 @@ resource "azurerm_sql_database" "this" {
   resource_group_name = var.azure_sql_resource_group_name
   server_name         = azurerm_sql_server.this.name
   location            = azurerm_resource_group.azure_sql.location
-
+  /* 
   extended_auditing_policy {
     storage_endpoint                        = azurerm_storage_account.this.primary_blob_endpoint
     storage_account_access_key              = azurerm_storage_account.this.primary_access_key
     storage_account_access_key_is_secondary = true
     retention_in_days                       = 6
-  }
+  } */
 }

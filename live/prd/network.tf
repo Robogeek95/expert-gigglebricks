@@ -1,23 +1,31 @@
-data "azurerm_virtual_network" "this" {
+resource "azurerm_virtual_network" "this" {
   name                = var.virtual_network_name
   resource_group_name = var.vn_resource_group_name
+  location            = azurerm_resource_group.vn.location
+  address_space       = var.virtual_network_address_prefix
 }
 
-data "azurerm_subnet" "vnetsub-Data01" {
+resource "azurerm_subnet" "vnetsub-Data01" {
   name                 = "vnetsub-Data01"
   virtual_network_name = var.virtual_network_name
   resource_group_name  = var.vn_resource_group_name
+
+  address_prefixes = var.data_subnet_address_prefixes
+
+  depends_on = [
+    azurerm_virtual_network.this
+  ]
 }
 
 resource "azurerm_network_security_group" "vnetsub-Data01" {
   name = format("nsg-t-vnetsub-Data01")
 
   resource_group_name = var.vn_resource_group_name
-  location            = data.azurerm_resource_group.vn.location
+  location            = azurerm_resource_group.vn.location
 }
 
 resource "azurerm_subnet_network_security_group_association" "vnetsub-Data01" {
-  subnet_id                 = data.azurerm_subnet.vnetsub-Data01.id
+  subnet_id                 = azurerm_subnet.vnetsub-Data01.id
   network_security_group_id = azurerm_network_security_group.vnetsub-Data01.id
 }
 
@@ -41,13 +49,17 @@ resource "azurerm_subnet" "public" {
       ]
     }
   }
+
+  depends_on = [
+    azurerm_virtual_network.this
+  ]
 }
 
 resource "azurerm_network_security_group" "public" {
   name = format("nsg-t-vnetsub-Web01")
 
   resource_group_name = var.vn_resource_group_name
-  location            = data.azurerm_resource_group.vn.location
+  location            = azurerm_resource_group.vn.location
 }
 
 resource "azurerm_subnet_network_security_group_association" "public" {
@@ -75,13 +87,17 @@ resource "azurerm_subnet" "private" {
       ]
     }
   }
+
+  depends_on = [
+    azurerm_virtual_network.this
+  ]
 }
 
 resource "azurerm_network_security_group" "private" {
   name = format("nsg-t-vnetsub-Weba01")
 
   resource_group_name = var.vn_resource_group_name
-  location            = data.azurerm_resource_group.vn.location
+  location            = azurerm_resource_group.vn.location
 }
 
 resource "azurerm_subnet_network_security_group_association" "private" {
@@ -89,36 +105,27 @@ resource "azurerm_subnet_network_security_group_association" "private" {
   network_security_group_id = azurerm_network_security_group.private.id
 }
 
-resource "azurerm_public_ip" "this" {
-  name = format("pubIp-%s-%s-%s",
-  data.azurerm_resource_group.vn.location, var.environment, var.project)
-  location            = data.azurerm_resource_group.vn.location
-  resource_group_name = var.vn_resource_group_name
-  allocation_method   = var.allocation_method
-  sku                 = var.public_ip_sku
-}
-
 resource "azurerm_lb" "this" {
   sku                 = var.load_balancer_sku
   name                = "databricks-TestLoadBalancer"
-  location            = data.azurerm_resource_group.vn.location
+  location            = azurerm_resource_group.vn.location
   resource_group_name = var.vn_resource_group_name
 
   frontend_ip_configuration {
     name                 = "PublicIPAddress"
-    public_ip_address_id = azurerm_public_ip.this.id
+    public_ip_address_id = module.public_ip.azurerm_public_ip_pubIp-eastus-dev-test_id
   }
 }
 
 resource "azurerm_lb_backend_address_pool" "this" {
   name = format("addpool-%s-%s-%s",
-  data.azurerm_resource_group.vn.location, var.environment, var.project)
+  azurerm_resource_group.vn.location, var.environment, var.project)
   loadbalancer_id = azurerm_lb.this.id
 }
 
 resource "azurerm_private_link_service" "this" {
   name                = "databricks-privatelink"
-  location            = data.azurerm_resource_group.vn.location
+  location            = azurerm_resource_group.vn.location
   resource_group_name = var.vn_resource_group_name
 
   auto_approval_subscription_ids              = ["00000000-0000-0000-0000-000000000000"]

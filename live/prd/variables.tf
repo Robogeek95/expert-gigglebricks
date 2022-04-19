@@ -7,7 +7,7 @@ variable "location" {
 variable "environment" {
   type        = string
   description = "(Required) Three character environment name"
-  default     = "dev"
+  default     = "prd"
 
   validation {
     condition     = length(var.environment) <= 3
@@ -110,4 +110,24 @@ variable "public_subnet_address_spaces" {
 
 variable "private_subnet_address_prefixes" {
   default = ["10.96.5.0/24"]
+}
+
+variable "virtual_network_address_prefix" {
+  default = ["10.96.0.0/16"]
+}
+
+variable "data_subnet_address_prefixes" {
+  default = ["10.96.6.0/24"]
+}
+
+variable "NetworkWatcherRG_name" {
+  default = "NetworkWatcherRG"
+}
+
+variable "vmrg-t-vmtest01_name" {
+  default = "rg-t-vmtest01"
+}
+
+variable "rg-zscaler-zpa-connector_name" {
+  default = "rg-zscaler-zpa-connector"
 }

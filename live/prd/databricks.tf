@@ -6,7 +6,7 @@ resource "azurerm_databricks_workspace" "this" {
   sku                 = var.databricks_sku
 
   custom_parameters {
-    virtual_network_id  = data.azurerm_virtual_network.this.id
+    virtual_network_id  = azurerm_virtual_network.this.id
     public_subnet_name  = azurerm_subnet.public.name
     private_subnet_name = azurerm_subnet.private.name
 

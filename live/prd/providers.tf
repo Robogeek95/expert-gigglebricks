@@ -1,7 +1,7 @@
 provider "azurerm" {
   features {}
 
-  subscription_id = "05b29857-413e-4db4-b399-96f5339c9c8f"
+  subscription_id = "6b6c23ac-12a7-4ddb-9a8e-043f53d430ff"
 }
 
 provider "databricks" {
