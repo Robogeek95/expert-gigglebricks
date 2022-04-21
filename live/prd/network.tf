@@ -9,8 +9,10 @@ resource "azurerm_subnet" "vnetsub-Data01" {
   name                 = "vnetsub-Data01"
   virtual_network_name = var.virtual_network_name
   resource_group_name  = var.vn_resource_group_name
-
   address_prefixes = var.data_subnet_address_prefixes
+
+  enforce_private_link_service_network_policies = true
+  enforce_private_link_endpoint_network_policies = true
 
   depends_on = [
     azurerm_virtual_network.this
@@ -121,30 +123,4 @@ resource "azurerm_lb_backend_address_pool" "this" {
   name = format("addpool-%s-%s-%s",
   azurerm_resource_group.vn.location, var.environment, var.project)
   loadbalancer_id = azurerm_lb.this.id
-}
-
-resource "azurerm_private_link_service" "this" {
-  name                = "databricks-privatelink"
-  location            = azurerm_resource_group.vn.location
-  resource_group_name = var.vn_resource_group_name
-
-  auto_approval_subscription_ids              = ["00000000-0000-0000-0000-000000000000"]
-  visibility_subscription_ids                 = ["00000000-0000-0000-0000-000000000000"]
-  load_balancer_frontend_ip_configuration_ids = [azurerm_lb.this.frontend_ip_configuration.0.id]
-
-  nat_ip_configuration {
-    name                       = "primary"
-    private_ip_address         = var.private_link_primary_private_ip_address
-    private_ip_address_version = "IPv4"
-    subnet_id                  = azurerm_subnet.public.id
-    primary                    = true
-  }
-
-  nat_ip_configuration {
-    name                       = "secondary"
-    private_ip_address         = var.private_link_secondary_private_ip_address
-    private_ip_address_version = "IPv4"
-    subnet_id                  = azurerm_subnet.public.id
-    primary                    = false
-  }
 }

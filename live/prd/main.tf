@@ -86,6 +86,8 @@ module "private_endpoint" {
   source = "../../modules/private_endpoint"
 
   location                                    = var.location
+  private_ip_address                          = var.private_link_primary_private_ip_address
+  secondary_private_ip_address                = var.private_link_secondary_private_ip_address
   rg-t-connectivity01_name                    = var.vn_resource_group_name
   databricks-signature-azuresql_name          = var.azure_sql_resource_group_name
   private_dns_zone_ids                        = [module.private_dns.azurerm_private_dns_zone_privatelink-002E-database-002E-windows-002E-net_id]
@@ -137,6 +139,15 @@ module "disk" {
   rg-t-vmtest01_name            = azurerm_resource_group.vmrg-t-vmtest01.name
   rg-zscaler-zpa-connector_name = azurerm_resource_group.rg-zscaler-zpa-connector.name
 }
+
+/* module "storage_account" {
+  source = "../../modules/storage_account"
+
+  location                              = var.location
+  rg-t-vmtest01_name                    = azurerm_resource_group.vmrg-t-vmtest01.name
+  rg-databricks-signature-azuresql_name = var.azure_sql_resource_group_name
+  environment                           = var.environment
+} */
 
 /* 
 module "virtual_machine" {

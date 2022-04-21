@@ -8,7 +8,7 @@ resource "azurerm_private_link_service" "databricks-privatelink" {
   nat_ip_configuration {
     name                       = "primary"
     primary                    = "true"
-    private_ip_address         = "10.96.5.70"
+    private_ip_address         = var.private_ip_address
     private_ip_address_version = "IPv4"
     subnet_id                  = var.vnetsub-Web01_id
   }
@@ -16,7 +16,7 @@ resource "azurerm_private_link_service" "databricks-privatelink" {
   nat_ip_configuration {
     name                       = "secondary"
     primary                    = "false"
-    private_ip_address         = "10.96.5.72"
+    private_ip_address         = var.secondary_private_ip_address
     private_ip_address_version = "IPv4"
     subnet_id                  = var.vnetsub-Web01_id
   }

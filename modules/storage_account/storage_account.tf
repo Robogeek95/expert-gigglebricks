@@ -16,7 +16,7 @@ resource "azurerm_storage_account" "databrickssignaturesa" {
   is_hns_enabled                    = "false"
   location                          = var.location
   min_tls_version                   = "TLS1_0"
-  name                              = "databrickssignaturesa"
+  name = format("kv-%s-%s-%s","databricks", var.environment, "signaturesa")
 
   network_rules {
     bypass         = ["AzureServices"]
@@ -81,7 +81,7 @@ resource "azurerm_storage_account" "rgtvmtest01diag" {
   is_hns_enabled                    = "false"
   location                          = var.location
   min_tls_version                   = "TLS1_2"
-  name                              = "rgtvmtest01diag"
+  name = format("kv-%s-%s", var.environment, "rgtvmtest01diag")
 
   network_rules {
     bypass         = ["AzureServices"]
@@ -96,21 +96,6 @@ resource "azurerm_storage_account" "rgtvmtest01diag" {
       enabled               = "true"
       include_apis          = "true"
       retention_policy_days = "7"
-      version               = "1.0"
-    }
-
-    logging {
-      delete                = "false"
-      read                  = "false"
-      retention_policy_days = "0"
-      version               = "1.0"
-      write                 = "false"
-    }
-
-    minute_metrics {
-      enabled               = "false"
-      include_apis          = "false"
-      retention_policy_days = "0"
       version               = "1.0"
     }
   }

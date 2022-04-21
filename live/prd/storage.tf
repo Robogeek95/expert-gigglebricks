@@ -16,7 +16,7 @@ resource "azurerm_key_vault_secret" "sql_administrator_login_password" {
 }
 
 resource "azurerm_sql_server" "this" {
-  name = format("signature-msql-databricks")
+  name = format("signature-prod-msql-databricks")
 
   resource_group_name          = var.azure_sql_resource_group_name
   location                     = azurerm_resource_group.azure_sql.location
@@ -51,7 +51,7 @@ resource "azurerm_storage_account" "this" {
 }
 
 resource "azurerm_sql_database" "this" {
-  name                = "databricks-signature-sql-db"
+  name                = "databricks-signature-prod-sql-db"
   resource_group_name = var.azure_sql_resource_group_name
   server_name         = azurerm_sql_server.this.name
   location            = azurerm_resource_group.azure_sql.location

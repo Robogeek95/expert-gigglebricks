@@ -75,12 +75,12 @@ EOT
 
 variable "private_link_primary_private_ip_address" {
   type    = string
-  default = "10.96.5.70"
+  default = "10.96.5.12"
 }
 
 variable "private_link_secondary_private_ip_address" {
   type    = string
-  default = "10.96.5.72"
+  default = "10.96.5.14"
 }
 
 variable "allocation_method" {
