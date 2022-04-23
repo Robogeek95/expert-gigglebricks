@@ -89,7 +89,7 @@ variable "allocation_method" {
 }
 
 variable "vn_resource_group_name" {
-  default = "rg-t-connectivity01"
+  default = "rg-connectivity01"
 }
 
 variable "databricks_resource_group_name" {
@@ -124,8 +124,8 @@ variable "NetworkWatcherRG_name" {
   default = "NetworkWatcherRG"
 }
 
-variable "vmrg-t-vmtest01_name" {
-  default = "rg-t-vmtest01"
+variable "rg-comp01_name" {
+  default = "rg-vmcomp01"
 }
 
 variable "rg-zscaler-zpa-connector_name" {

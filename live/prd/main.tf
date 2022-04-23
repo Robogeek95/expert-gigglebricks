@@ -28,8 +28,8 @@ resource "azurerm_resource_group" "NetworkWatcherRG" {
   location = var.location
 }
 
-resource "azurerm_resource_group" "vmrg-t-vmtest01" {
-  name     = var.vmrg-t-vmtest01_name
+resource "azurerm_resource_group" "vmrg-vmcomp01" {
+  name     = var.rg-comp01_name
   location = var.location
 }
 
@@ -78,7 +78,7 @@ module "private_dns" {
   source = "../../modules/private_dns"
 
   location                        = var.location
-  rg-t-connectivity01_name        = var.vn_resource_group_name
+  rg-connectivity01_name        = var.vn_resource_group_name
   vnet-t-eus-generalnetwork001_id = azurerm_virtual_network.this.id
 }
 
@@ -88,7 +88,7 @@ module "private_endpoint" {
   location                                    = var.location
   private_ip_address                          = var.private_link_primary_private_ip_address
   secondary_private_ip_address                = var.private_link_secondary_private_ip_address
-  rg-t-connectivity01_name                    = var.vn_resource_group_name
+  rg-connectivity01_name                    = var.vn_resource_group_name
   databricks-signature-azuresql_name          = var.azure_sql_resource_group_name
   private_dns_zone_ids                        = [module.private_dns.azurerm_private_dns_zone_privatelink-002E-database-002E-windows-002E-net_id]
   load_balancer_frontend_ip_configuration_ids = [azurerm_lb.this.frontend_ip_configuration[0].id]
@@ -102,7 +102,7 @@ module "public_ip" {
 
   location                      = var.location
   rg-databricks-signature_name  = var.databricks_resource_group_name
-  rg-t-connectivity01_name      = var.vn_resource_group_name
+  rg-connectivity01_name      = var.vn_resource_group_name
   rg-zscaler-zpa-connector_name = azurerm_resource_group.rg-zscaler-zpa-connector.name
 }
 
@@ -116,12 +116,12 @@ module "network_interface" {
   pubIp-b15b5f4532974f4aa626cf82bdf0bc6d_id = module.public_ip.azurerm_public_ip_b15b5f4532974f4aa626cf82bdf0bc6d-publicIP_id
   pubIp-27500a7011f34e7e95ba5ff557a00690_id = module.public_ip.azurerm_public_ip_27500a7011f34e7e95ba5ff557a00690-publicIP_id
   pubIp-f936d79f09a5437f9d2845844c0abf75_id = module.public_ip.azurerm_public_ip_f936d79f09a5437f9d2845844c0abf75-publicIP_id
-  rg-t-connectivity01_name                  = var.vn_resource_group_name
+  rg-connectivity01_name                  = var.vn_resource_group_name
   data_subnet_id                            = azurerm_subnet.vnetsub-Data01.id
   rg-databricks-signature-azuresql_name     = var.azure_sql_resource_group_name
   r-vm-zpa-connector-001-ip_id              = module.public_ip.azurerm_public_ip_r-vm-zpa-connector-001-ip_id
   rg-zscaler-zpa-connector_name             = azurerm_resource_group.rg-zscaler-zpa-connector.name
-  rg-t-vmtest01_name                        = azurerm_resource_group.vmrg-t-vmtest01.name
+  rg-vmcomp01_name                        = azurerm_resource_group.vmrg-vmcomp01.name
 }
 
 module "network_watcher" {
@@ -136,7 +136,7 @@ module "disk" {
 
   location                      = var.location
   rg-databricks-signature_name  = var.databricks_resource_group_name
-  rg-t-vmtest01_name            = azurerm_resource_group.vmrg-t-vmtest01.name
+  rg-vmcomp01_name            = azurerm_resource_group.vmrg-vmcomp01.name
   rg-zscaler-zpa-connector_name = azurerm_resource_group.rg-zscaler-zpa-connector.name
 }
 
@@ -144,7 +144,7 @@ module "disk" {
   source = "../../modules/storage_account"
 
   location                              = var.location
-  rg-t-vmtest01_name                    = azurerm_resource_group.vmrg-t-vmtest01.name
+  rg-vmcomp01_name                    = azurerm_resource_group.vmrg-vmcomp01.name
   rg-databricks-signature-azuresql_name = var.azure_sql_resource_group_name
   environment                           = var.environment
 } */

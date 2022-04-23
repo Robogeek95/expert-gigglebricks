@@ -10,7 +10,7 @@ data "azurerm_subnet" "vnetsub-Data01" {
 }
 
 resource "azurerm_network_security_group" "vnetsub-Data01" {
-  name = format("nsg-t-vnetsub-Data01")
+  name = format("nsg-vnetsub-Data01")
 
   resource_group_name = var.vn_resource_group_name
   location            = data.azurerm_resource_group.vn.location
@@ -100,7 +100,7 @@ resource "azurerm_public_ip" "this" {
 
 resource "azurerm_lb" "this" {
   sku                 = var.load_balancer_sku
-  name                = "databricks-TestLoadBalancer"
+  name                = "databricks-LoadBalancer"
   location            = data.azurerm_resource_group.vn.location
   resource_group_name = var.vn_resource_group_name
 

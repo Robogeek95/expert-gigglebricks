@@ -1,6 +1,6 @@
-output "azurerm_subnet_nat_gateway_association_vnetsub-untrust01_nat_gateway_association_id" {
+/* output "azurerm_subnet_nat_gateway_association_vnetsub-untrust01_nat_gateway_association_id" {
   value = "${azurerm_subnet_nat_gateway_association.vnetsub-untrust01_nat_gateway_association.id}"
-}
+} */
 
 output "azurerm_subnet_network_security_group_association_vnetsub-Data01_network_security_group_association_id" {
   value = "${azurerm_subnet_network_security_group_association.vnetsub-Data01_network_security_group_association.id}"

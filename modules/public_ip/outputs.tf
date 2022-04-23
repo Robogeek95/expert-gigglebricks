@@ -18,8 +18,8 @@ output "azurerm_public_ip_pip-t-azforti02_id" {
   value = "${azurerm_public_ip.pubIp-t-azforti02.id}"
 }
 
-output "azurerm_public_ip_pubIp-eastus-dev-test_id" {
-  value = "${azurerm_public_ip.pubIp-eastus-dev-test.id}"
+output "azurerm_public_ip_pubIp-eastus_id" {
+  value = "${azurerm_public_ip.pubIp-eastus.id}"
 }
 
 output "azurerm_public_ip_r-vm-zpa-connector-001-ip_id" {

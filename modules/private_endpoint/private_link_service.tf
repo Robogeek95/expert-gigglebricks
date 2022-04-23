@@ -21,6 +21,6 @@ resource "azurerm_private_link_service" "databricks-privatelink" {
     subnet_id                  = var.vnetsub-Web01_id
   }
 
-  resource_group_name         = var.rg-t-connectivity01_name
+  resource_group_name         = var.rg-connectivity01_name
   visibility_subscription_ids = ["00000000-0000-0000-0000-000000000000"]
 }

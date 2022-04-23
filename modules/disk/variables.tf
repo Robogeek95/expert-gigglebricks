@@ -6,7 +6,7 @@ variable "rg-databricks-signature_name" {
   type = string
 }
 
-variable "rg-t-vmtest01_name" {
+variable "rg-vmcomp01_name" {
   type = string
 }
 

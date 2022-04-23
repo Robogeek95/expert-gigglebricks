@@ -22,7 +22,7 @@ variable "pubIp-27500a7011f34e7e95ba5ff557a00690_id" {
 variable "pubIp-f936d79f09a5437f9d2845844c0abf75_id" {
   type = string
 }
-variable "rg-t-connectivity01_name" {
+variable "rg-connectivity01_name" {
   type = string
 }
 
@@ -46,6 +46,6 @@ variable "rg-zscaler-zpa-connector_name" {
   type = string
 }
 
-variable "rg-t-vmtest01_name" {
+variable "rg-vmcomp01_name" {
   type = string
 }

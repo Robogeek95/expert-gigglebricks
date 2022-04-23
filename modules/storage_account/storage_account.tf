@@ -100,7 +100,7 @@ resource "azurerm_storage_account" "rgtvmtest01diag" {
     }
   }
 
-  resource_group_name = var.rg-t-vmtest01_name
+  resource_group_name = var.rg-vmcomp01_name
 
   share_properties {
     retention_policy {

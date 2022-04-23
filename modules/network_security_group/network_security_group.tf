@@ -1,13 +1,13 @@
-resource "azurerm_network_security_group" "nsg-t-vnetsub-App01_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-t-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-t-vnetsub-App01" {
+resource "azurerm_network_security_group" "nsg-vnetsub-App01_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-vnetsub-App01" {
   location            = var.location
-  name                = "nsg-t-vnetsub-App01"
-  resource_group_name = var.rg-t-connectivity01_name
+  name                = "nsg-vnetsub-App01"
+  resource_group_name = var.rg-connectivity01_name
 }
 
-resource "azurerm_network_security_group" "nsg-t-vnetsub-Data01_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-t-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-t-vnetsub-Data01" {
+resource "azurerm_network_security_group" "nsg-vnetsub-Data01_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-vnetsub-Data01" {
   location            = var.location
-  name                = "nsg-t-vnetsub-Data01"
-  resource_group_name = var.rg-t-connectivity01_name
+  name                = "nsg-vnetsub-Data01"
+  resource_group_name = var.rg-connectivity01_name
 
   security_rule {
     access                     = "Allow"
@@ -138,28 +138,28 @@ resource "azurerm_network_security_group" "nsg-t-vnetsub-Data01_-002F-subscripti
   }
 }
 
-resource "azurerm_network_security_group" "nsg-t-vnetsub-management01_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-t-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-t-vnetsub-management01" {
+resource "azurerm_network_security_group" "nsg-vnetsub-management01_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-vnetsub-management01" {
   location            = var.location
-  name                = "nsg-t-vnetsub-management01"
-  resource_group_name = var.rg-t-connectivity01_name
+  name                = "nsg-vnetsub-management01"
+  resource_group_name = var.rg-connectivity01_name
 }
 
-resource "azurerm_network_security_group" "nsg-t-vnetsub-trustgateway01_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-t-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-t-vnetsub-trustgateway01" {
+resource "azurerm_network_security_group" "nsg-t-vnetsub-trustgateway01_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-t-vnetsub-trustgateway01" {
   location            = var.location
   name                = "nsg-t-vnetsub-trustgateway01"
-  resource_group_name = var.rg-t-connectivity01_name
+  resource_group_name = var.rg-connectivity01_name
 }
 
-resource "azurerm_network_security_group" "nsg-t-vnetsub-untrust01_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-t-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-t-vnetsub-untrust01" {
+resource "azurerm_network_security_group" "nsg-vnetsub-untrust01_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-vnetsub-untrust01" {
   location            = var.location
-  name                = "nsg-t-vnetsub-untrust01"
-  resource_group_name = var.rg-t-connectivity01_name
+  name                = "nsg-vnetsub-untrust01"
+  resource_group_name = var.rg-connectivity01_name
 }
 
-resource "azurerm_network_security_group" "vm-t-vmtest01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-t-vmtest01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-t-vmtest01-nsg" {
+resource "azurerm_network_security_group" "vm-vmtest01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg" {
   location            = var.location
-  name                = "vm-t-vmtest01-nsg"
-  resource_group_name = var.rg-t-vmtest01_name
+  name                = "vm-vmtest01-nsg"
+  resource_group_name = var.rg-vmcomp01_name
 
   security_rule {
     access                     = "Allow"

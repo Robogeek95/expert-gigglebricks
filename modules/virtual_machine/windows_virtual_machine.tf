@@ -30,7 +30,7 @@ resource "azurerm_windows_virtual_machine" "vm-t-vmtest01" {
   patch_mode            = "AutomaticByOS"
   priority              = "Spot"
   provision_vm_agent    = "true"
-  resource_group_name   = "RG-T-VMTEST01"
+  resource_group_name   = "rg-vmcomp01"
   secure_boot_enabled   = "false"
   size                  = "Standard_DS1_v2"
 

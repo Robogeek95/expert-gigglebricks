@@ -1,6 +1,6 @@
-resource "azurerm_virtual_network" "vnet-t-eus-generalnetwork001" {
-  address_space           = ["10.96.0.0/21"]
+resource "azurerm_virtual_network" "vnet-eus-generalnetwork001" {
+  address_space           = var.address_space
   location                = "eastus"
-  name                    = "vnet-t-eus-generalnetwork001"
-  resource_group_name     = var.rg-t-connectivity01_name
+  name                    = "vnet-eus-generalnetwork001"
+  resource_group_name     = var.rg-connectivity01_name
 }

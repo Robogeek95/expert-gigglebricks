@@ -1,4 +1,4 @@
-variable "rg-t-connectivity01_name" {
+variable "rg-connectivity01_name" {
   type = string
 }
 
@@ -6,6 +6,6 @@ variable "location" {
   type = string
 }
 
-variable "pubIp-eastus-dev-test_id" {
+variable "pubIp-eastus_id" {
   type = string
 }

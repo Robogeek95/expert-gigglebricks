@@ -2,7 +2,7 @@ variable "location" {
   type = string
 }
 
-variable "rg-t-vmtest01_name" {
+variable "rg-vmcomp01_name" {
   type = string
 }
 

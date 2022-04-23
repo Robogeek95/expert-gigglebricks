@@ -250,7 +250,7 @@ resource "azurerm_managed_disk" "vm-t-vmtest01_OsDisk_1_ae3eaf8d944c4f25af1ff0f8
   on_demand_bursting_enabled    = "false"
   os_type                       = "Windows"
   public_network_access_enabled = "true"
-  resource_group_name           = var.rg-t-vmtest01_name
+  resource_group_name           = var.rg-vmcomp01_name
   storage_account_type          = "Premium_LRS"
   tier                          = "P10"
   trusted_launch_enabled        = "false"

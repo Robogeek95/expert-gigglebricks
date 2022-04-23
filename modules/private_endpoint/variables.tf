@@ -16,7 +16,7 @@ variable "vnetsub-Web01_id" {}
 variable "private_connection_resource_id" { 
 }
 
-variable "rg-t-connectivity01_name" {}
+variable "rg-connectivity01_name" {}
 
 variable "databricks-signature-azuresql_name" {}
 

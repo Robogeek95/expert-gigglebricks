@@ -89,7 +89,7 @@ variable "allocation_method" {
 }
 
 variable "vn_resource_group_name" {
-  default = "rg-t-connectivity01"
+  default = "rg-connectivity01"
 }
 
 variable "databricks_resource_group_name" {

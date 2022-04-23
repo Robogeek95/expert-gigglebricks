@@ -3,11 +3,6 @@ resource "azurerm_resource_group" "NetworkWatcherRG" {
   name     = "NetworkWatcherRG"
 }
 
-resource "azurerm_resource_group" "databricks-rg-databricks-signature" {
-  location = "eastus"
-  name     = "databricks-rg-databricks-signature"
-}
-
 resource "azurerm_resource_group" "databricks-signature" {
   location = "eastus"
   name     = "databricks-signature"
@@ -18,9 +13,9 @@ resource "azurerm_resource_group" "databricks-signature-azuresql" {
   name     = "databricks-signature-azuresql"
 }
 
-resource "azurerm_resource_group" "rg-t-connectivity01" {
+resource "azurerm_resource_group" "rg-connectivity01" {
   location = "eastus"
-  name     = "rg-t-connectivity01"
+  name     = "rg-connectivity01"
 
   tags = {
     Application = "Vnet"
@@ -29,9 +24,9 @@ resource "azurerm_resource_group" "rg-t-connectivity01" {
   }
 }
 
-resource "azurerm_resource_group" "rg-t-vmtest01" {
+resource "azurerm_resource_group" "rg-vmcomp01" {
   location = "eastus"
-  name     = "rg-t-vmtest01"
+  name     = "rg-vmcomp01"
 }
 
 resource "azurerm_resource_group" "rg-zscaler-zpa-connector" {

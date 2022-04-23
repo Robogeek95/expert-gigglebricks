@@ -1,6 +1,6 @@
 resource "azurerm_private_dns_zone" "privatelink-002E-database-002E-windows-002E-net" {
   name                = "privatelink.database.windows.net"
-  resource_group_name = var.rg-t-connectivity01_name
+  resource_group_name = var.rg-connectivity01_name
 
   soa_record {
     email        = "azureprivatedns-host.microsoft.com"

@@ -20,7 +20,7 @@ resource "azurerm_subnet" "vnetsub-Data01" {
 }
 
 resource "azurerm_network_security_group" "vnetsub-Data01" {
-  name = format("nsg-t-vnetsub-Data01")
+  name = format("nsg-vnetsub-Data01")
 
   resource_group_name = var.vn_resource_group_name
   location            = azurerm_resource_group.vn.location
@@ -109,13 +109,13 @@ resource "azurerm_subnet_network_security_group_association" "private" {
 
 resource "azurerm_lb" "this" {
   sku                 = var.load_balancer_sku
-  name                = "databricks-TestLoadBalancer"
+  name                = "databricks-LoadBalancer"
   location            = azurerm_resource_group.vn.location
   resource_group_name = var.vn_resource_group_name
 
   frontend_ip_configuration {
     name                 = "PublicIPAddress"
-    public_ip_address_id = module.public_ip.azurerm_public_ip_pubIp-eastus-dev-test_id
+    public_ip_address_id = module.public_ip.azurerm_public_ip_pubIp-eastus_id
   }
 }
 

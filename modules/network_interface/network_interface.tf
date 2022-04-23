@@ -136,7 +136,7 @@ resource "azurerm_network_interface" "databricks-privatelink-002E-nic-002E-53f22
 
   location            = var.location
   name                = "databricks-privatelink.nic.53f22e78-3456-48be-9b75-51d49a7d8360"
-  resource_group_name = var.rg-t-connectivity01_name
+  resource_group_name = var.rg-connectivity01_name
 }
 
 resource "azurerm_network_interface" "privateNIC-f936d79f09a5437f9d2845844c0abf75" {
@@ -245,5 +245,5 @@ resource "azurerm_network_interface" "vm-t-vmtest01589" {
 
   location            = var.location
   name                = "vm-t-vmtest01589"
-  resource_group_name = var.rg-t-vmtest01_name
+  resource_group_name = var.rg-vmcomp01_name
 }
