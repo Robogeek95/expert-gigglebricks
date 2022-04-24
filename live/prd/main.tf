@@ -154,7 +154,7 @@ module "virtual_machine" {
   source = "../../modules/virtual_machine"
 
   location                                           = var.location
-  nic_vm-t-vmtest01589_id                            = module.network_interface.azurerm_network_interface_vm-t-vmtest01589_id
+  nic_vm-t-vm01589_id                            = module.network_interface.azurerm_network_interface_vm-t-vm01589_id
   rg-databricks-signature_name                       = var.databricks_resource_group_name
   r-vm-zpa-connecto210_z1_id                         = module.network_interface.azurerm_network_interface_r-vm-zpa-connecto210_z1_id
   nic_f936d79f09a5437f9d2845844c0abf75-privateNIC_id = module.network_interface.azurerm_network_interface_f936d79f09a5437f9d2845844c0abf75-privateNIC_id

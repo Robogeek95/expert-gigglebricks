@@ -125,3 +125,27 @@ module "databricks" {
   public_subnet_network_security_group_association_id  = module.subnet.azurerm_subnet_network_security_group_association_vnetsub-Web01_network_security_group_association_id
   private_subnet_network_security_group_association_id = module.subnet.azurerm_subnet_network_security_group_association_vnetsub-Data01_network_security_group_association_id
 }
+
+module "disk" {
+  source = "../../modules/disk"
+
+  location                      = var.location
+  rg-databricks-signature_name  = module.resource_group.azurerm_resource_group_databricks-signature_name
+  rg-vmcomp01_name              = module.resource_group.azurerm_resource_group_rg-vmcomp01_name
+  rg-zscaler-zpa-connector_name = module.resource_group.azurerm_resource_group_rg-zscaler-zpa-connector_name
+}
+
+module "virtual_machine" {
+  source = "../../modules/virtual_machine"
+
+  location                                           = var.location
+  rg-databricks-signature_name                       = module.resource_group.azurerm_resource_group_databricks-signature_name
+  nic_vm-t-vm01589_id                            = module.network_interface.azurerm_network_interface_vm-t-vm01589_id
+  r-vm-zpa-connecto210_z1_id                         = module.network_interface.azurerm_network_interface_r-vm-zpa-connecto210_z1_id
+  nic_f936d79f09a5437f9d2845844c0abf75-privateNIC_id = module.network_interface.azurerm_network_interface_f936d79f09a5437f9d2845844c0abf75-privateNIC_id
+  nic_f936d79f09a5437f9d2845844c0abf75-publicNIC_id  = module.network_interface.azurerm_network_interface_f936d79f09a5437f9d2845844c0abf75-publicNIC_id
+  nic_27500a7011f34e7e95ba5ff557a00690-privateNIC_id = module.network_interface.azurerm_network_interface_27500a7011f34e7e95ba5ff557a00690-privateNIC_id
+  nic_27500a7011f34e7e95ba5ff557a00690-publicNIC_id  = module.network_interface.azurerm_network_interface_27500a7011f34e7e95ba5ff557a00690-publicNIC_id
+  nic_b15b5f4532974f4aa626cf82bdf0bc6d-privateNIC_id = module.network_interface.azurerm_network_interface_b15b5f4532974f4aa626cf82bdf0bc6d-privateNIC_id
+  nic_b15b5f4532974f4aa626cf82bdf0bc6d-publicNIC_id  = module.network_interface.azurerm_network_interface_b15b5f4532974f4aa626cf82bdf0bc6d-publicNIC_id
+}

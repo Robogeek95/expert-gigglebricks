@@ -2,7 +2,7 @@ variable "databrickssa_name" {
   type = string
 }
 
-variable "rgtvmtest01diag_name" {
+variable "rgtvm01diag_name" {
   type = string
 }
 
@@ -10,6 +10,6 @@ variable "databrickssa_name" {
   type = string
 }
 
-variable "storage_account_rgtvmtest01diag_name" {
+variable "storage_account_rgtvm01diag_name" {
   type = string
 }

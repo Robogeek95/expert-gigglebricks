@@ -34,6 +34,6 @@ output "azurerm_network_interface_r-vm-zpa-connecto210_z1_id" {
   value = "${azurerm_network_interface.r-vm-zpa-connecto210_z1.id}"
 }
 
-output "azurerm_network_interface_vm-t-vmtest01589_id" {
-  value = "${azurerm_network_interface.vm-t-vmtest01589.id}"
+output "azurerm_network_interface_vm-t-vm01589_id" {
+  value = "${azurerm_network_interface.vm-t-vm01589.id}"
 }

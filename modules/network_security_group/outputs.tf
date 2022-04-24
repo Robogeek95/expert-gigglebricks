@@ -38,20 +38,20 @@ output "azurerm_network_security_group_nsg-vnetsub-untrust01_-002F-subscriptions
   value = "${azurerm_network_security_group.nsg-vnetsub-untrust01_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-vnetsub-untrust01.name}"
 }
 
-output "azurerm_network_security_group_vm-vmtest01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg_id" {
-  value = "${azurerm_network_security_group.vm-vmtest01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg.id}"
+output "azurerm_network_security_group_vm-vm01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg_id" {
+  value = "${azurerm_network_security_group.vm-vm01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg.id}"
 }
 
-output "azurerm_network_security_group_vm-vmtest01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg_name" {
-  value = "${azurerm_network_security_group.vm-vmtest01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg.name}"
+output "azurerm_network_security_group_vm-vm01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg_name" {
+  value = "${azurerm_network_security_group.vm-vm01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg.name}"
 }
 
-output "azurerm_network_security_rule_3389_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg-002F-securityRules-002F-3389_id" {
-  value = "${azurerm_network_security_rule.sr-3389_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg-002F-securityRules-002F-3389.id}"
+output "azurerm_network_security_rule_3389_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg-002F-securityRules-002F-3389_id" {
+  value = "${azurerm_network_security_rule.sr-3389_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg-002F-securityRules-002F-3389.id}"
 }
 
-output "azurerm_network_security_rule_3389_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg-002F-securityRules-002F-3389_name" {
-  value = "${azurerm_network_security_rule.sr-3389_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg-002F-securityRules-002F-3389.name}"
+output "azurerm_network_security_rule_3389_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg-002F-securityRules-002F-3389_name" {
+  value = "${azurerm_network_security_rule.sr-3389_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg-002F-securityRules-002F-3389.name}"
 }
 
 output "azurerm_network_security_rule_HTTPSOuboundZPA_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-vnetsub-Data01-002F-securityRules-002F-HTTPSOuboundZPA_id" {
@@ -126,12 +126,12 @@ output "azurerm_network_security_rule_Microsoft-002E-Databricks-workspaces_UseOn
   value = "${azurerm_network_security_rule.Microsoft-002E-Databricks-workspaces_UseOnly_databricks-worker-to-worker-outbound_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-vnetsub-Data01-002F-securityRules-002F-Microsoft-002E-Databricks-workspaces_UseOnly_databricks-worker-to-worker-outbound.name}"
 }
 
-output "azurerm_network_security_rule_RDP_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg-002F-securityRules-002F-RDP_id" {
-  value = "${azurerm_network_security_rule.RDP_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg-002F-securityRules-002F-RDP.id}"
+output "azurerm_network_security_rule_RDP_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg-002F-securityRules-002F-RDP_id" {
+  value = "${azurerm_network_security_rule.RDP_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg-002F-securityRules-002F-RDP.id}"
 }
 
-output "azurerm_network_security_rule_RDP_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg-002F-securityRules-002F-RDP_name" {
-  value = "${azurerm_network_security_rule.RDP_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg-002F-securityRules-002F-RDP.name}"
+output "azurerm_network_security_rule_RDP_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg-002F-securityRules-002F-RDP_name" {
+  value = "${azurerm_network_security_rule.RDP_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg-002F-securityRules-002F-RDP.name}"
 }
 
 output "azurerm_network_security_rule_SSH_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-connectivity01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-nsg-vnetsub-Data01-002F-securityRules-002F-SSH_id" {

@@ -1,10 +1,10 @@
-resource "azurerm_network_security_rule" "sr-3389_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg-002F-securityRules-002F-3389" {
+resource "azurerm_network_security_rule" "sr-3389_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg-002F-securityRules-002F-3389" {
   access                      = "Allow"
   destination_address_prefix  = "*"
   destination_port_range      = "3389"
   direction                   = "Inbound"
   name                        = "3389"
-  network_security_group_name = "${azurerm_network_security_group.vm-vmtest01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg.name}"
+  network_security_group_name = "${azurerm_network_security_group.vm-vm01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg.name}"
   priority                    = "310"
   protocol                    = "*"
   resource_group_name         = "${var.rg-vmcomp01_name}"
@@ -146,7 +146,7 @@ resource "azurerm_network_security_rule" "Microsoft-002E-Databricks-workspaces_U
   source_port_range           = "*"
 }
 
-resource "azurerm_network_security_rule" "RDP_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg-002F-securityRules-002F-RDP" {
+resource "azurerm_network_security_rule" "RDP_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg-002F-securityRules-002F-RDP" {
   access                      = "Allow"
   destination_address_prefix  = "*"
   destination_port_range      = "3389"

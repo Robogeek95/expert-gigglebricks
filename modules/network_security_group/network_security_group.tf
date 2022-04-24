@@ -156,9 +156,9 @@ resource "azurerm_network_security_group" "nsg-vnetsub-untrust01_-002F-subscript
   resource_group_name = var.rg-connectivity01_name
 }
 
-resource "azurerm_network_security_group" "vm-vmtest01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vmtest01-nsg" {
+resource "azurerm_network_security_group" "vm-vm01-nsg_-002F-subscriptions-002F-05b29857-413e-4db4-b399-96f5339c9c8f-002F-resourceGroups-002F-rg-vmcomp01-002F-providers-002F-Microsoft-002E-Network-002F-networkSecurityGroups-002F-vm-vm01-nsg" {
   location            = var.location
-  name                = "vm-vmtest01-nsg"
+  name                = "vm-vm01-nsg"
   resource_group_name = var.rg-vmcomp01_name
 
   security_rule {

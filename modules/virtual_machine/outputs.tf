@@ -14,6 +14,6 @@ output "azurerm_linux_virtual_machine_r-vm-zpa-connector-001_id" {
   value = "${azurerm_linux_virtual_machine.r-vm-zpa-connector-001.id}"
 }
 
-output "azurerm_windows_virtual_machine_vm-t-vmtest01_id" {
-  value = "${azurerm_windows_virtual_machine.vm-t-vmtest01.id}"
+output "azurerm_windows_virtual_machine_vm-t-vm01_id" {
+  value = "${azurerm_windows_virtual_machine.vm-t-vm01.id}"
 }

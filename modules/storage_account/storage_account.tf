@@ -64,7 +64,7 @@ resource "azurerm_storage_account" "databrickssignaturesa" {
 
 resource "azurerm_storage_account" "dbstoragelguebfbjeynck" {}
 
-resource "azurerm_storage_account" "rgtvmtest01diag" {
+resource "azurerm_storage_account" "rgtvm01diag" {
   account_kind                    = "Storage"
   account_replication_type        = "LRS"
   account_tier                    = "Standard"
@@ -81,7 +81,7 @@ resource "azurerm_storage_account" "rgtvmtest01diag" {
   is_hns_enabled                    = "false"
   location                          = var.location
   min_tls_version                   = "TLS1_2"
-  name = format("kv-%s-%s", var.environment, "rgtvmtest01diag")
+  name = format("kv-%s-%s", var.environment, "rgtvm01diag")
 
   network_rules {
     bypass         = ["AzureServices"]

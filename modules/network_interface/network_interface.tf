@@ -230,7 +230,7 @@ resource "azurerm_network_interface" "r-vm-zpa-connecto210_z1" {
   resource_group_name = var.rg-zscaler-zpa-connector_name
 }
 
-resource "azurerm_network_interface" "vm-t-vmtest01589" {
+resource "azurerm_network_interface" "vm-t-vm01589" {
   enable_accelerated_networking = "true"
   enable_ip_forwarding          = "false"
 
@@ -244,6 +244,6 @@ resource "azurerm_network_interface" "vm-t-vmtest01589" {
   }
 
   location            = var.location
-  name                = "vm-t-vmtest01589"
+  name                = "vm-t-vm01589"
   resource_group_name = var.rg-vmcomp01_name
 }

@@ -240,13 +240,13 @@ resource "azurerm_managed_disk" "r-vm-zpa-connector-001_OsDisk_1_aaacd96622e4429
   zone                          = "1"
 }
 
-resource "azurerm_managed_disk" "vm-t-vmtest01_OsDisk_1_ae3eaf8d944c4f25af1ff0f870ff325f" {
+resource "azurerm_managed_disk" "vm-t-vm01_OsDisk_1_ae3eaf8d944c4f25af1ff0f870ff325f" {
   create_option                 = "FromImage"
   disk_size_gb                  = "127"
   hyper_v_generation            = "V2"
   image_reference_id            = "/Subscriptions/05b29857-413e-4db4-b399-96f5339c9c8f/Providers/Microsoft.Compute/Locations/eastus/Publishers/MicrosoftWindowsServer/ArtifactTypes/VMImage/Offers/WindowsServer/Skus/2022-datacenter-azure-edition/Versions/20348.587.220303"
   location                       = var.location
-  name                          = "vm-t-vmtest01_OsDisk_1_ae3eaf8d944c4f25af1ff0f870ff325f"
+  name                          = "vm-t-vm01_OsDisk_1_ae3eaf8d944c4f25af1ff0f870ff325f"
   on_demand_bursting_enabled    = "false"
   os_type                       = "Windows"
   public_network_access_enabled = "true"
